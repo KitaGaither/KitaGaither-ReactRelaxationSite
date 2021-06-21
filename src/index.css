@@ -1,13 +1,156 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Georgia', serif;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3 {
+  font-family: 'Georgia', serif;
+}
+
+h2 {
+  color: navy;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 30px;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    #93e6f1 0%,
+    #91c0f1 45.5%
+  );
+  color: navy;
+}
+
+.site-footer {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    #93e6f1 0%,
+    #91c0f1 45.5%
+  );
+  color: navy;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.navbar {
+  background-color: navy;
+  color: white;
+  padding: 0;
+  margin-left: 0;
+}
+
+header p {
+  color: white;
+  font-size: x-large;
+  padding-top: 0;
+}
+
+.btn-social-icon {
+  color: white;
+  font-size: x-large;
+}
+
+.btn-link {
+  color: white;
+}
+
+.btn-primary {
+  background-color: navy;
+}
+
+li a {
+  color: white;
+}
+
+h2 {
+  padding-top: 20px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+  border: solid navy;
+  margin-bottom: 50px;
+}
+
+.copyRightLink {
+  color: white;
+}
+
+#carouselButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  margin-bottom: 25px;
+}
+
+.btn-lg {
+  background-color: orchid;
+}
+
+.modal-header {
+  background-color: navy;
+}
+
+#singleButton {
+  background-color: orchid;
+  color: white;
+}
+
+#cancelButton {
+  background-color: orchid;
+  color: white;
+}
+
+#submitButton {
+  background-color: navy;
+  color: white;
+}
+
+.btn-instagram {
+  color: white;
+}
+
+.btn-facebook {
+  color: white;
+}
+
+.btn-twitter {
+  color: white;
+}
+
+.btn-youtube {
+  color: white;
+}
+
+#xButton {
+  color: white;
+}
+
+#accordion {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.primary-text {
+  color: navy;
+}
+
+.homeCarousel {
+  margin-bottom: 50px;
+}
+
+.logo {
+  text-decoration-line: none;
+  text-decoration: none;
+  color: navy;
 }
