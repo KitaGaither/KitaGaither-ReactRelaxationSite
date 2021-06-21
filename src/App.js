@@ -1,45 +1,63 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-
+import './App.css';
+import { Jumbotron, Button } from 'reactstrap';
 
 class App extends Component {
+  
+
+
   render() {
       return (
         <div className="App">
-          <Navbar dark>
+
+          <Jumbotron className="mb-0">
+            <header className="jumbotron jumbotron-fluid text-left">
+                    <h1>Relaxation Spa</h1>
+                    <h6>SPIRIT | MIND | BODY</h6>
+                    <p className="text-center">Ask about our specials!</p>
+                    <div className="text-right">
+                        <Button type="Button" className="btn">
+                            <a id="reserveButton" role="Button" className="btn btn-lg text-white text-nowrap">Book Here</a>
+                        </Button>
+                    </div>
+                </header>
+          </Jumbotron>
+
+          <Navbar dark className="mt-0">
             <div className="container">
-              <NavbarBrand href="/">Relaxation Spa</NavbarBrand>
+              <NavbarBrand href="/"></NavbarBrand>
             </div>
-              <nav class="navbar navbar-expand-sm navbar-dark sticky-top ml-auto">
-                <div class="container">
-                  <button
-                    class="navbar-toggler ml-auto mr-2"
-                    type="button"
+              <nav className="navbar navbar-expand-sm navbar-dark sticky-top ml-auto">
+                <div className="container">
+                  <Button
+                    className="navbar-toggler ml-auto mr-2"
+                    type="Button"
                     data-toggle="collapse"
-                    data-target="#nucampNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                    <div class="collapse navbar-collapse ml-3" id="nucampNavbar">
-                      <ul class="navbar-nav">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#">Home</a>
+                    data-target="#relaxationNavbar">
+                    <span className="navbar-toggler-icon"></span>
+                  </Button>
+                    <div className="collapse navbar-collapse ml-3" id="relaxationNavbar">
+                      <ul className="navbar-nav">
+                        <li className="nav-item active">
+                          <a className="nav-link" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="about.html">About</a>
+                        <li className="nav-item">
+                          <a className="nav-link" href="about.html">About</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="services.html">Services</a>
+                        <li className="nav-item">
+                          <a className="nav-link" href="services.html">Services</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="contact.html">Contact</a>
+                        <li className="nav-item">
+                          <a className="nav-link" href="contact.html">Contact</a>
                         </li>
                       </ul>
                     </div>
                 </div>
               </nav>
           </Navbar>
-        </div>  
-      );
+        </div> 
+    );
   }
 }
 
