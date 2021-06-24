@@ -10,6 +10,10 @@ h3 {
   font-family: 'Georgia', serif;
 }
 
+h1 {
+  color: navy;
+}
+
 h2 {
   color: navy;
 }
@@ -34,8 +38,8 @@ h2 {
   );
   color: navy;
   margin-bottom: 0;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 0px;
 }
 
 .navbar {
@@ -43,6 +47,7 @@ h2 {
   color: white;
   padding: 0;
   margin-left: 0;
+  margin-bottom: 20px;
 }
 
 header p {
@@ -60,8 +65,8 @@ header p {
   color: white;
 }
 
-.btn-primary {
-  background-color: navy;
+.btn-lg {
+  background-color: orchid;
 }
 
 li a {
@@ -79,6 +84,7 @@ h2 {
 .carousel {
   border: solid navy;
   margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 .copyRightLink {
@@ -96,7 +102,6 @@ h2 {
 #reserveButton {
   background-color: orchid;
   outline-color: orchid;
-
 }
 
 .modal-header {
@@ -156,3 +161,4 @@ h2 {
   text-decoration: none;
   color: navy;
 }
+
