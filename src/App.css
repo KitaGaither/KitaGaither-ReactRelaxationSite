@@ -18,6 +18,10 @@ h2 {
   color: navy;
 }
 
+.router-h2 {
+  color: orchid;
+}
+
 .jumbotron {
   margin-bottom: 0;
   margin-top: 0;
@@ -144,8 +148,8 @@ h2 {
 }
 
 #accordion {
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-bottom: 200px;
+  margin-top: 50px;
 }
 
 .primary-text {
@@ -162,3 +166,11 @@ h2 {
   color: navy;
 }
 
+.card-title {
+  color: navy;
+}
+
+.send-feedback {
+  background-color: navy;
+  color: white;
+}

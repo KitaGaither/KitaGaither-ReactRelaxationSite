@@ -24,12 +24,17 @@ class Header extends Component {
             <React.Fragment>
                 <Jumbotron fluid>
                     <div className="container">
-                        <div className="row">
+                        <div className="row col-xs-4 col-md-12">
                             <div className="col text-left">
                                 <h1>Relaxation Spa</h1>
                                 <h6>MIND | BODY | SPIRIT</h6>
                             </div>
                         </div>
+                        <div className="row col-xs-4 col-md-12"></div>
+                        <div className="text-center">
+                        <h1 className="text-white">Ask about our specials!</h1>
+                        </div>
+                        <div className="row col-xs-4 col-md-12"></div>
                         <div className="text-right">
                         <Button className="btn-lg">
                             Book Now!
@@ -38,7 +43,7 @@ class Header extends Component {
                     </div>
                 </Jumbotron>
                 
-                <Navbar dark sticky="top" expand="md">
+                <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler  onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -67,9 +72,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <div className="text-center">
-                    <h1>Come Relax With Us!</h1>
-                </div>
+                
             </React.Fragment>
         );
     }
