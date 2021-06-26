@@ -1,6 +1,5 @@
-import { Button } from 'reactstrap';
 import React, { Component }  from 'react';
-import { Navbar, Jumbotron, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import { Button, Navbar, Jumbotron, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -34,6 +33,7 @@ class Header extends Component {
                         <div className="text-center">
                         <h1 className="text-white">Ask about our specials!</h1>
                         </div>
+
                         <div className="row col-xs-4 col-md-12"></div>
                         <div className="text-right">
                         <Button className="btn-lg">

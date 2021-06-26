@@ -18,10 +18,10 @@ function Footer(props) {
                         </div>
                         <div className="col-6 col-sm-3 text-center">
                             <h5>Social</h5>
-                            <a className="btn btn-social-icon btn-google" href="https://www.linkedin.com/in/lakitagaither/"><i className="fa fa-linkedin" /></a> 
+                            <a className="btn btn-social-icon btn-google" href="https://www.linkedin.com/in/lakitagaither/"><i className="fa fa-linkedin" /></a>{' '} 
                             <a className="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i className="fa fa-instagram" /></a>{' '}
-                            <a className="btn btn-social-icon btn-google" href="https://github.com/KitaGaither/"><i className="fa fa-github" /></a> 
-                            <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter" /></a>{' '}  
+                            <a className="btn btn-social-icon btn-google" href="https://github.com/KitaGaither/"><i className="fa fa-github" /></a>{' '} 
+                            <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter" /></a>  
                         </div>
                         <div className="col-sm-4 text-center">
                             <h5>Contact</h5>

@@ -19,7 +19,7 @@ class Main extends Component {
         return(
             <div>
                 <Header />
-                
+
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/contact' component={Contact} />
