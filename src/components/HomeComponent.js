@@ -1,5 +1,7 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
+import { FadeTransform } from 'react-animation-components';
+
 
 
 function Home(props) {
@@ -28,10 +30,16 @@ function Home(props) {
         }
       ];
     return (
+      <FadeTransform
+      in
+      transformProps={{
+          exitTransform: 'scale(0.5) translateY(50%)'
+      }}>
         <div className="container text-center">
           <h2 className="router-h2">Come Relax With Us!</h2>
           <MyCarousel />
         </div>
+        </FadeTransform>
     );
 }
 export default Home;   

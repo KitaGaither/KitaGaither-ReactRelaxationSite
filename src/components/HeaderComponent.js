@@ -1,16 +1,24 @@
 import React, { Component }  from 'react';
-import { Button, Navbar, Jumbotron, NavbarToggler, Collapse, Nav, NavItem, Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { Button, Navbar, Jumbotron, NavbarToggler, Collapse, Nav, NavItem, Modal, ModalBody, ModalHeader, Label, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { LocalForm, Control, Errors } from 'react-redux-form';
+
+const required = val => val && val.length;
+const maxLength = len => val => !val || (val.length <= len);
+const minLength = len => val => val && (val.length >= len);
+const isNumber = val => !isNaN(+val);
+const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Header extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-          isModalOpen: false
+          isModalOpen: false,
+          isNavOpen: false
         };
         this.toggleModal = this.toggleModal.bind(this);
+        this.toggleNav = this.toggleNav.bind(this);
 
     }
 
@@ -26,6 +34,12 @@ class Header extends Component {
         //alert('toggleModal Works but I dont know what is preventing my modal from openiing.');
     }
 
+    toggleNav() {
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -33,55 +47,72 @@ class Header extends Component {
                     <div className="container">
                         <div className="row col-xs-4 col-md-12">
                             <div className="col text-left">
-                                <h1>Relaxation Spa</h1>
+                                <h1 className="ml-0">Relaxation Spa</h1>
                                 <h6>MIND | BODY | SPIRIT</h6>
                             </div>
                         </div>
                         <div className="row col-xs-4 col-md-12"></div>
-                        <div className="text-center">
+                        <div className="col text-center">
                         <h1 className="text-white">Ask about our specials!</h1>
                         </div>
+                        
 
-                        <div className="row col-xs-4 col-md-12"></div>
-                        <div className="text-right">
-                        <Button className="btn-lg">
-                            Book Now!
-                        </Button>
+                        <div className="row col-xs-4 col-md-12">
+                        <div className="col text-right">
+                        <Button onClick={this.toggleModal} className="btn-lg pull-right">
+                        Book Now!
+                        </Button> 
+                        </div>
                         </div>
 
                         <div>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                            <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
 
-                    <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+                                <ModalHeader toggle={this.toggleModal} className="modalHeader">Confirm Your Appointment Below</ModalHeader>
 
-                        <ModalBody>
+                                    <ModalBody>
 
-                            <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
 
-                                <div className="form-group">
-                                    <Label htmlFor="rating">Rating</Label>
-                                        <Control.select className="form-control" model=".rating" id="rating" name="rating">
-                                            <option value="option1">1</option>
-                                            <option value="option2">2</option>
-                                            <option value="option3">3</option>
-                                            <option value="option4">4</option>
-                                            <option value="option5">5</option>
-                                        </Control.select> 
-                                </div>
+                                        <div className="form-group">       
+                                                    <Label htmlFor="author">First Name</Label>
+                                                    <Control.text className="form-control" model=".author" id="author" name="author"
+                                                        validators={{
+                                                            required,
+                                                            minLength: minLength(2),
+                                                            maxLength: maxLength(15)
+                                                        }}
+                                                    />
 
-                                <div className="form-group">       
-                                        <Label htmlFor="author">Your Name</Label>
-                                        <Control.text className="form-control" model=".author" id="author" name="author"
-                                            validators={{
-                                                required,
-                                                minLength: minLength(2),
-                                                maxLength: maxLength(15)
-                                            }}
-                                        />
+                                                    <Errors
+                                                    className="text-danger"
+                                                    model=".author"
+                                                    show="touched"
+                                                    component="div"
+                                                    messages={{
+                                                        required: 'Required',
+                                                        minLength: 'Must be at least 2 characters',
+                                                        maxLength: 'Must be 15 characters or less'
+                                                    }}
+                                                    />
+                                                    
+                                            </div> 
 
-                                        <Errors
+                                <Row className="form-group">
+                                <Label htmlFor="lastName" md={2}>Last Name</Label>
+                                <Col md={10}>
+                                    <Control.text model=".lastName" id="lastName" name="lastName"
+                                        placeholder="Last Name"
+                                        className="form-control"
+                                        validators={{
+                                            required,
+                                            minLength: minLength(2),
+                                            maxLength: maxLength(15)
+                                        }}
+                                    />
+                                    <Errors
                                         className="text-danger"
-                                        model=".author"
+                                        model=".lastName"
                                         show="touched"
                                         component="div"
                                         messages={{
@@ -89,39 +120,137 @@ class Header extends Component {
                                             minLength: 'Must be at least 2 characters',
                                             maxLength: 'Must be 15 characters or less'
                                         }}
-                                        />
+                                    />
+                                </Col>
+                            </Row>
+
+                            <Row className="form-group">
+                                <Label htmlFor="phoneNum" md={2}>Phone</Label>
+                                <Col md={10}>
+                                    <Control.text model=".phoneNum" id="phoneNum" name="phoneNum"
+                                        placeholder="Phone number"
+                                        className="form-control"
+                                        validators={{
+                                            required,
+                                            minLength: minLength(10),
+                                            maxLength: maxLength(15),
+                                            isNumber
+                                        }}
+                                    />
+                                    <Errors
+                                        className="text-danger"
+                                        model=".phoneNum"
+                                        show="touched"
+                                        component="div"
+                                        messages={{
+                                            required: 'Required',
+                                            minLength: 'Must be at least 10 numbers',
+                                            maxLength: 'Must be 15 numbers or less',
+                                            isNumber: 'Must be a number'
+                                        }}
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Label htmlFor="email" md={2}>Email</Label>
+                                <Col md={10}>
+                                    <Control.text model=".email" id="email" name="email"
+                                        placeholder="Email"
+                                        className="form-control"
+                                        validators={{
+                                            required,
+                                            validEmail
+                                        }}
+                                    />
+                                    <Errors
+                                        className="text-danger"
+                                        model=".email"
+                                        show="touched"
+                                        component="div"
+                                        messages={{
+                                            required: 'Required',
+                                            validEmail: 'Invalid email address'
+                                        }}
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col md={{size: 4, offset: 2}}>
+                                    <div className="form-check">
+                                        <Label check>
+                                            <Control.checkbox
+                                                model=".agree"
+                                                name="agree"
+                                                className="form-check-input"
+                                            /> {' '}
+                                            <strong>May we contact you?</strong>
+                                        </Label>
+                                    </div>
+                                </Col>
+                                <Col md={4}>
+                                    <Control.select model=".contactType" name="contactType"
+                                        className="form-control">
+                                        <option>By Phone</option>
+                                        <option>By Email</option>
+                                    </Control.select>
+                                </Col>
+                            </Row>
+
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label" for="date">Date of Massage</label>
+                                <div class="col-sm-6">
+                                    <input
+                                    class="form-control"
+                                    type="date"
+                                    name="date"
+                                    id="date"
+                                    placeholder="date"
+                                    />
+                                </div>
+                                </div>
+
+                            <div className="form-group">
+                                <Label htmlFor="rating">Single or Couple's Massage</Label>
+                                    <Control.select className="form-control" model=".rating" id="rating" name="rating">
+                                        <option value="option1">Single Massage</option>
+                                        <option value="option2">Couple's Massage</option>
                                         
-                                </div> 
+                                    </Control.select> 
+                            </div>
 
-                                <div className="form-group">
-                                        <Label htmlFor="text">Comment</Label>
-                                        <Control.textarea className="form-control" rows="6" model=".text" id="text" name="text"
-                                        />
-                                </div>
+                            <div className="form-group">
+                                <Label htmlFor="rating">Length of Massage</Label>
+                                    <Control.select className="form-control" model=".rating" id="rating" name="rating">
+                                        <option value="option1">30 minutes</option>
+                                        <option value="option2">60 minutes</option>
+                                        <option value="option2">90 minutes</option>
+                                        <option value="option2">120 minutes</option>
+                                        </Control.select> 
+                            </div>
 
-                                <div>
-                                <Button onClick={this.submitForm} type="submit" value="submit" color="primary">Submit
-                                </Button>
-                                </div>
 
-                            </LocalForm>
+                            
 
-                        </ModalBody>
+                            <div className="form-group">
+                                    <Label htmlFor="text">Any Special Requests?</Label>
+                                    <Control.textarea className="form-control" rows="6" model=".text" id="text" name="text"
+                                    />
+                            </div>
 
-                </Modal>
-                
-                <Button onClick={this.toggleModal} outline color="secondary"><i className="fa fa-pencil fa-lg" aria-hidden="true"></i>
-                Submit Comment
-                </Button>  
-
-            </div>    
-
-                    </div>
+                            <div>
+                            <Button onClick={this.submitForm} type="submit" value="submit" className="submitButton">Submit
+                            </Button>
+                            </div>
+                        </LocalForm>
+                    </ModalBody>
+            </Modal>
+        </div>    
+    </div>
                 </Jumbotron>
-                
+                    
                 <Navbar dark expand="md">
                     <div className="container">
-                        <NavbarToggler  onClick={this.toggleNav} />
+                        <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>

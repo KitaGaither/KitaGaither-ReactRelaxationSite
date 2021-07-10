@@ -41,6 +41,7 @@ h2 {
     #91c0f1 45.5%
   );
   color: navy;
+  margin-top: 20px;
   margin-bottom: 0;
   padding-top: 30px;
   padding-bottom: 0px;
@@ -71,6 +72,9 @@ header p {
 
 .btn-lg {
   background-color: orchid;
+  outline-color: orchid;
+  display: flex;
+  justify-content: flex-end;
 }
 
 li a {
@@ -122,7 +126,7 @@ h2 {
   color: white;
 }
 
-#submitButton {
+.submitButton {
   background-color: navy;
   color: white;
 }
@@ -143,7 +147,7 @@ h2 {
   color: white;
 }
 
-#xButton {
+.xButton {
   color: white;
 }
 
@@ -178,3 +182,66 @@ h2 {
 .icons {
   color: white;
 }
+
+.modalHeader {
+  background-color: navy;
+  color: white;
+}
+
+.btn-social {
+  margin-bottom: 10px;
+}
+
+.local-form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.accordion {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 300px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100%;
+}
+
+
+.card-deck {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+/*Animations*********************************************************************************/
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: 300ms ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: 300ms ease-in;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 300ms ease-out;
+}
+/*Animations*********************************************************************************/
