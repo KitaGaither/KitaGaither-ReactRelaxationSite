@@ -11,8 +11,7 @@ import {
   ModalBody,
   ModalHeader,
   Label,
-  Row,
-  Col,
+  Row
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { LocalForm, Control, Errors } from 'react-redux-form';

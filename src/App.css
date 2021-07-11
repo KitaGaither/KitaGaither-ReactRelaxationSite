@@ -217,6 +217,23 @@ h2 {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
+.buddha {
+  height: 75%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pink-h2 {
+  color: orchid;
+}
+
+.about-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*Animations*********************************************************************************/
 .page-enter {
   opacity: 0;
