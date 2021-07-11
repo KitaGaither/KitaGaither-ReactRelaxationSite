@@ -89,13 +89,14 @@ class Header extends Component {
 
                 <ModalBody>
                   <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                    <div className='form-group'>
+                    <Row className='form-group'>
                       <Label htmlFor='author'>First Name</Label>
                       <Control.text
                         className='form-control'
                         model='.author'
                         id='author'
                         name='author'
+                        placeholder='First Name'
                         validators={{
                           required,
                           minLength: minLength(2),
@@ -114,44 +115,40 @@ class Header extends Component {
                           maxLength: 'Must be 15 characters or less',
                         }}
                       />
-                    </div>
+                    </Row>
 
                     <Row className='form-group'>
-                      <Label htmlFor='lastName' md={2}>
-                        Last Name
-                      </Label>
-                      <Col md={10}>
-                        <Control.text
-                          model='.lastName'
-                          id='lastName'
-                          name='lastName'
-                          placeholder='Last Name'
-                          className='form-control'
-                          validators={{
-                            required,
-                            minLength: minLength(2),
-                            maxLength: maxLength(15),
-                          }}
-                        />
-                        <Errors
-                          className='text-danger'
-                          model='.lastName'
-                          show='touched'
-                          component='div'
-                          messages={{
-                            required: 'Required',
-                            minLength: 'Must be at least 2 characters',
-                            maxLength: 'Must be 15 characters or less',
-                          }}
-                        />
-                      </Col>
+                      <Label htmlFor='author'>Last Name</Label>
+                      <Control.text
+                        className='form-control'
+                        model='.author'
+                        id='author'
+                        name='author'
+                        placeholder='Last Name'
+                        validators={{
+                          required,
+                          minLength: minLength(2),
+                          maxLength: maxLength(15),
+                        }}
+                      />
+
+                      <Errors
+                        className='text-danger'
+                        model='.author'
+                        show='touched'
+                        component='div'
+                        messages={{
+                          required: 'Required',
+                          minLength: 'Must be at least 2 characters',
+                          maxLength: 'Must be 15 characters or less',
+                        }}
+                      />
                     </Row>
 
                     <Row className='form-group'>
                       <Label htmlFor='phoneNum' md={2}>
                         Phone
                       </Label>
-                      <Col md={10}>
                         <Control.text
                           model='.phoneNum'
                           id='phoneNum'
@@ -177,13 +174,11 @@ class Header extends Component {
                             isNumber: 'Must be a number',
                           }}
                         />
-                      </Col>
                     </Row>
                     <Row className='form-group'>
                       <Label htmlFor='email' md={2}>
                         Email
                       </Label>
-                      <Col md={10}>
                         <Control.text
                           model='.email'
                           id='email'
@@ -205,10 +200,8 @@ class Header extends Component {
                             validEmail: 'Invalid email address',
                           }}
                         />
-                      </Col>
                     </Row>
                     <Row className='form-group'>
-                      <Col md={{ size: 4, offset: 2 }}>
                         <div className='form-check'>
                           <Label check>
                             <Control.checkbox
@@ -219,20 +212,9 @@ class Header extends Component {
                             <strong>May we contact you?</strong>
                           </Label>
                         </div>
-                      </Col>
-                      <Col md={4}>
-                        <Control.select
-                          model='.contactType'
-                          name='contactType'
-                          className='form-control'
-                        >
-                          <option>By Phone</option>
-                          <option>By Email</option>
-                        </Control.select>
-                      </Col>
                     </Row>
 
-                    <div class='row form-group'>
+                    <Row class='row form-group'>
                       <label class='col-sm-6 col-form-label' for='date'>
                         Date of Massage
                       </label>
@@ -245,7 +227,7 @@ class Header extends Component {
                           placeholder='date'
                         />
                       </div>
-                    </div>
+                    </Row>
 
                     <div className='form-group'>
                       <Label htmlFor='rating'>Single or Couple's Massage</Label>
