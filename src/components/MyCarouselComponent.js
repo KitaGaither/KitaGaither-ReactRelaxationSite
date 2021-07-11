@@ -25,6 +25,6 @@ const items = [
     key: '3'
   }
 ];
-const MyCarousel = () => <div className="container"><div className="row"><UncontrolledCarousel items={items} /></div></div> ;
+const MyCarousel = () => <div className="container carousel"><div className="row"><UncontrolledCarousel items={items} /></div></div> ;
 
 export default MyCarousel;

@@ -90,7 +90,7 @@ h2 {
 }
 
 .carousel {
-  border: solid navy;
+  border: none;
   margin-bottom: 50px;
   margin-top: 30px;
 }
@@ -193,8 +193,11 @@ h2 {
 }
 
 .local-form {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 75%;
 }
 
 .accordion {
@@ -207,7 +210,6 @@ h2 {
 .card {
   width: 100%;
 }
-
 
 .card-deck {
   margin-left: 20px;
