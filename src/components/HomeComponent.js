@@ -8,10 +8,10 @@ function Home(props) {
     const MyCarousel = () => <div className="container"><div className="row"><UncontrolledCarousel items={items} /></div></div> ;
     const items = [
         {
-          src: '../assets/images/stonesonback.jpg',
-          altText: 'stonesonback',
-          caption: 'Enjoy a hot stone massage to relieve stress.',
-          header: 'Hot Stone Massage',
+          src: '../assets/images/pretty-rocks.jpg',
+          altText: 'rock tower',
+          caption: 'Responsibly Sourced Stones.',
+          header: 'Hot Stones',
           key: '1'
         },
         {
@@ -24,7 +24,7 @@ function Home(props) {
         {
           src: '../assets/images/lotion.jpg',
           altText: 'lotion',
-          caption: 'We use responsibly resourced products for all of our massages.',
+          caption: 'We use the best massage oils for every massage.',
           header: 'Organic Massage Oils',
           key: '3'
         }

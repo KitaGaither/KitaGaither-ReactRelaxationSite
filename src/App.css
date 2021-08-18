@@ -208,7 +208,8 @@ h2 {
 }
 
 .card {
-  width: 100%;
+  margin-bottom: 30px;
+  
 }
 
 .card-deck {
@@ -216,6 +217,15 @@ h2 {
   margin-right: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: auto;
+}
+
+.card-img-top {
+  height: 500px;
+  width: auto;
 }
 
 .buddha {
@@ -232,6 +242,12 @@ h2 {
 .about-text {
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-text {
+  margin-left: 185px;
+  margin-right: 170px;
+  justify-content: space-evenly;
 }
 
 /*Animations*********************************************************************************/
@@ -264,3 +280,4 @@ h2 {
   transition: 300ms ease-out;
 }
 /*Animations*********************************************************************************/
+

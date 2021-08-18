@@ -4,8 +4,8 @@ import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [
   {
-    src: '../assets/images/stonesonback.jpg',
-    altText: 'stonesonback',
+    src: '../assets/images/sparobe.jpg',
+    altText: 'woman in white spa robe',
     caption: 'Enjoy a hot stone massage to relieve stress.',
     header: 'Hot Stone Massage',
     key: '1'
@@ -19,7 +19,7 @@ const items = [
   },
   {
     src: '../assets/images/lotion.jpg',
-    altText: 'lotion',
+    altText: 'lotion bottle, towel and pink flower',
     caption: 'We use responsibly resourced products for all of our massages.',
     header: 'Organic Massage Oils',
     key: '3'
