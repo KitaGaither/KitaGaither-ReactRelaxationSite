@@ -8,9 +8,8 @@ class About extends Component {
             <React.Fragment>
                 <h2 className="text-center pink-h2">Learn More About Our Mission!</h2>
                 <Card className="card buddha">
-                    <CardImg className="card-img-top" src="../assets/images/buddha.jpg" alt="stones on back" />
-                    <CardBody className="card-body">
-                    </CardBody>
+                    <CardImg className="" src="../assets/images/buddha.jpg" alt="stones on back" />
+                    
                 </Card>
 
                 <div className="about-text">
