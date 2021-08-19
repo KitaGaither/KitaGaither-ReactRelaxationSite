@@ -24,7 +24,7 @@ class Services extends Component {
 
 
                                     <Card className="card col buddha">
-                                    <CardImg className="card-img-top" src="../assets/images/flowers.jpg" alt="woman floating in water" />
+                                    <CardImg className="card-img-top" src="../assets/images/sparobe.jpg" alt="woman floating in water" />
                                     <CardBody className="card-body">
                                         <CardTitle className="card-title">Silver Package</CardTitle>
                                         <CardText className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas doloremque quibusdam placeat cupiditate vero ut hic provident. Ipsam harum omnis iusto, ab repellat impedit, dicta quod libero qui temporibus non.</CardText>
